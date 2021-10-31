@@ -1,0 +1,13 @@
+@mixin ellipsis($linesToShow: 3, $fontSize: 15px, $lineHeight: 20px) {
+    display: block; /* Fallback for non-webkit */
+    display: -webkit-box;
+    max-height: #{$lineHeight * $linesToShow}; /* Fallback for non-webkit */
+    margin-left: auto;
+    margin-right: auto;
+    font-size: $fontSize;
+    line-height: $lineHeight;
+    -webkit-line-clamp: $linesToShow;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}

@@ -1,0 +1,41 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Snapshot test 1`] = `
+<article
+  className="city-card"
+  onMouseEnter={[Function]}
+  onMouseLeave={[Function]}
+  style={
+    Object {
+      "backgroundImage": "url(https://via.placeholder.com/150)",
+    }
+  }
+  title="Venice card element"
+>
+  <header>
+    <p
+      className="country"
+    >
+      Italy
+    </p>
+    <h3
+      title="title"
+    >
+      Venice
+    </h3>
+  </header>
+  <main
+    style={
+      Object {
+        "visibility": "hidden",
+      }
+    }
+  >
+    <h4
+      title="description"
+    >
+      Venice, the capital of northern Italy’s Veneto region, is built on more than 100 small islands in a lagoon in the Adriatic Sea. It has no roads, just canals.
+    </h4>
+  </main>
+</article>
+`;

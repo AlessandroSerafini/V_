@@ -1,0 +1,6 @@
+./_environment
+build
+dist
+node_modules
+.cache
+docs

@@ -1,6 +1,6 @@
 # Valtech Frontend End code challenge
 
-This project was bootstrapped with Create React App
+This project was bootstrapped with Create React App. Node v16.10.0 was used for development.
 
 ## Available Scripts
 

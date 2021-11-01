@@ -29,7 +29,6 @@ You will also see any lint errors in the console.
 Launches the test runner in the interactive watch mode.\
 See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
-
 ## Data mocking
 
 Mock Service Worker was used to request data, simulating a fetch from a webservice.

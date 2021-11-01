@@ -3,6 +3,19 @@
 
 .cities {
     $baseMultiplier: 8px;
+    @mixin always-visible-content() {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        > header {
+            margin-bottom: $baseMultiplier * 4;
+        }
+        > header,
+        > main {
+            position: relative;
+        }
+    }
+
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     grid-column-gap: $baseMultiplier * 2;
@@ -30,6 +43,9 @@
         }
         @include respond-to(xxs-l) {
             grid-column: span 2;
+        }
+        @include respond-to(xs) {
+            @include always-visible-content();
         }
 
         &::before {
@@ -60,6 +76,9 @@
         > main {
             transition: all 0.5s;
             transition-delay: 0.4s;
+            @include respond-to(xs) {
+                visibility: visible !important;
+            }
 
             > h4 {
                 padding: 0 $baseMultiplier * 2;
@@ -101,16 +120,7 @@
             }
         }
         &.always-visible {
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            > header {
-                margin-bottom: $baseMultiplier * 4;
-            }
-            > header,
-            > main {
-                position: relative;
-            }
+            @include always-visible-content();
         }
         &:not(:first-child) {
             > header {
@@ -125,32 +135,34 @@
         }
 
         &:not(.always-visible) {
-            > header,
-            > main {
-                position: absolute;
-                top: 50%;
-                transform: translateY(-50%);
-                width: 100%;
-            }
-
-            > main {
-                opacity: 0;
-                height: 0;
-                overflow: hidden;
-            }
-
-            &:hover {
+            @include respond-to(from-sm) {
                 > header,
                 > main {
-                    transform: inherit;
+                    position: absolute;
+                    top: 50%;
+                    transform: translateY(-50%);
+                    width: 100%;
                 }
-                > header {
-                    top: $baseMultiplier * 8;
-                }
+
                 > main {
-                    opacity: 1;
-                    height: auto;
-                    top: $baseMultiplier * 16;
+                    opacity: 0;
+                    height: 0;
+                    overflow: hidden;
+                }
+
+                &:hover {
+                    > header,
+                    > main {
+                        transform: inherit;
+                    }
+                    > header {
+                        top: $baseMultiplier * 8;
+                    }
+                    > main {
+                        opacity: 1;
+                        height: auto;
+                        top: $baseMultiplier * 16;
+                    }
                 }
             }
         }

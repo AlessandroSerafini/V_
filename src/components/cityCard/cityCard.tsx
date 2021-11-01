@@ -1,5 +1,6 @@
 import React, { ReactElement, useState } from 'react';
 import './style/cityCard.scss';
+import '../../style/style.scss';
 
 // -----------------------------------------------------------------
 // I n t e r f a c e s
